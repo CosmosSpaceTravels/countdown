@@ -93,16 +93,26 @@
     }
 
     .card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
-      pointer-events: none;
-    }
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg,
+      rgba(56,189,248,0.08),
+      transparent 40%,
+      rgba(56,189,248,0.05)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(56,189,248,0.05),
+      rgba(56,189,248,0.05) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+  animation: holoScan 6s linear infinite;
+  opacity: 0.9;
+  pointer-events: none;
+}
 
     .card {
       background: linear-gradient(180deg, rgba(8,20,40,0.72), rgba(5,10,25,0.55));
@@ -437,7 +447,11 @@
       }
     }
 
-  </style>
+  @keyframes holoScan {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(10%); }
+}
+</style>
 </head>
 <body>
   <div class="stars"></div>
