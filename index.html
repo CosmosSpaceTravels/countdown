@@ -353,7 +353,43 @@
         font-size: 1.4rem;
       }
     }
-  </style>
+  
+    /* === MOBILE HOLOGRAPHIC FIX === */
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      -webkit-backdrop-filter: blur(22px);
+      backdrop-filter: blur(22px);
+    }
+
+    .card::before {
+      z-index: 0;
+      opacity: 0.9;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .holo-ring {
+      opacity: 0.22;
+      filter: drop-shadow(0 0 25px rgba(56,189,248,0.35));
+    }
+
+    .stars {
+      opacity: 1;
+    }
+
+    /* reinforce GPU rendering for mobile */
+    * {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    </style>
 </head>
 <body>
   <div class="stars"></div>
