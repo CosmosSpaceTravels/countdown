@@ -389,6 +389,36 @@
       transform: translateZ(0);
     }
 
+    
+    /* === MOBILE HOLOGRAPHIC FIX (CORRETTO) === */
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      -webkit-backdrop-filter: blur(22px);
+      backdrop-filter: blur(22px);
+    }
+
+    .card::before {
+      opacity: 0.75;
+    }
+
+    .holo-ring {
+      opacity: 0.45;
+      filter: drop-shadow(0 0 30px rgba(56,189,248,0.45));
+    }
+
+    .stars {
+      opacity: 1;
+    }
+
+    /* migliora rendering mobile senza forzare tutto il DOM */
+    h1, .number {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
     </style>
 </head>
 <body>
@@ -487,5 +517,4 @@
   </script>
 </body>
 </html>
-
 
