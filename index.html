@@ -45,10 +45,28 @@
         radial-gradient(circle at 80% 40%, rgba(255,255,255,0.15) 1px, transparent 2px),
         radial-gradient(circle at 50% 80%, rgba(255,255,255,0.2) 1px, transparent 2px),
         linear-gradient(to bottom, #020111 0%, #091b3d 40%, #000000 100%);
-      z-index:-3;
+      z-index:-4;
     }
 
-    /* 🌌 SFONDO SPAZIALE SEMPLICE (senza telemetria) */
+    /* 🌍 TERRA DAL BASSO */
+    .earth{
+      position:absolute;
+      bottom:-20%;
+      left:50%;
+      transform:translateX(-50%);
+      width:120vw;
+      height:70vh;
+      background-image:url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=2000&q=80");
+      background-size:cover;
+      background-position:center bottom;
+      z-index:-3;
+      opacity:0.9;
+
+      /* sfumatura superiore per blending */
+      mask-image: linear-gradient(to top, black 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+    }
+
     .nebula{
       position:absolute;
       inset:0;
@@ -63,15 +81,9 @@
     }
 
     @keyframes nebulaFloat{
-      0%{
-        transform: scale(1) translate(0px, 0px);
-      }
-      50%{
-        transform: scale(1.05) translate(10px, -10px);
-      }
-      100%{
-        transform: scale(1.02) translate(-10px, 5px);
-      }
+      0%{ transform: scale(1) translate(0px, 0px); }
+      50%{ transform: scale(1.05) translate(10px, -10px); }
+      100%{ transform: scale(1.02) translate(-10px, 5px); }
     }
 
     .stars{
@@ -198,6 +210,7 @@
 <body>
 
   <div class="space-bg"></div>
+  <div class="earth"></div>
   <div class="nebula"></div>
   <div class="stars" id="stars"></div>
 
