@@ -38,19 +38,35 @@ body{
 .earth{
   position:absolute;
   inset:0;
- background: url("earth-4k.jpg") center bottom / no-repeat;
+
+  /* zoom aumentato */
+  background: url("earth-4k.jpg") center bottom / 150% no-repeat;
+
   z-index:-3;
+
+  /* animazione più profonda */
   animation: earthPulse 12s ease-in-out infinite;
+
   filter: contrast(1.15) saturate(1.25) brightness(0.95);
 }
 
+/* 🌌 PULSAZIONE CINEMATICA */
 @keyframes earthPulse {
-  0%,100% { 
-    transform: scale(1.08);
+
+  0%,100%{
+    transform: scale(1.10);
+    filter:
+      contrast(1.1)
+      saturate(1.2)
+      brightness(0.9);
   }
 
-  50% { 
-    transform: scale(1.18);
+  50%{
+    transform: scale(1.26);
+    filter:
+      contrast(1.3)
+      saturate(1.35)
+      brightness(1);
   }
 }
 
@@ -158,6 +174,10 @@ body{
   .countdown{
     grid-template-columns:repeat(2, 1fr);
   }
+
+  .earth{
+    background-size: 220%;
+  }
 }
 
 /* 📱 MOBILE */
@@ -172,6 +192,10 @@ body{
 
   .time-box{
     padding:16px;
+  }
+
+  .earth{
+    background-size: 280%;
   }
 }
 </style>
