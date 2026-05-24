@@ -108,7 +108,6 @@
       color:#7df9ff;
       text-shadow:0 0 12px #00eaff;
       animation:pulseTitle 2.5s infinite ease-in-out;
-
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -155,6 +154,16 @@
       border:1px solid rgba(125,249,255,0.2);
       border-radius:20px;
       padding:20px 10px;
+
+      /* 🔥 aggiunto effetto smooth */
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      will-change: transform;
+    }
+
+    /* 🔥 effetto hover zoom */
+    .time-box:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
     }
 
     .number{
